@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('adwaa')
+		DOCKERHUB_CREDENTIALS=credentials('jenkins')
 	}
 
 	stages {
