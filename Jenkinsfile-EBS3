@@ -6,10 +6,10 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('jenkins')
 		AWS_ACCESS_KEY_ID     = credentials('adwaa-jenkins-aws-secret-key-id')
    AWS_SECRET_ACCESS_KEY = credentials('adwaa-jenkins-aws-secret-access-key')
-	ARTIFACT_NAME = 'Dockerrun.aws.json'
-AWS_S3_BUCKET = 'dojotest-eb-docker1'
-AWS_EB_APP_NAME = 'dojotest-dojojump'
-        AWS_EB_ENVIRONMENT_NAME = 'Dojotestdojojump-env'
+	ARTIFACT_NAME = 'adwaa-Dockerrun.aws.json'
+AWS_S3_BUCKET = 'adwaa-docker-cicd1'
+AWS_EB_APP_NAME = 'adwaa-jenkins-docker-d5'
+        AWS_EB_ENVIRONMENT_NAME = 'Adwaajenkinsdockerd5-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
 	}
 
@@ -18,7 +18,7 @@ AWS_EB_APP_NAME = 'dojotest-dojojump'
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t chandradeoarya/dojo-jump:latest .'
+				sh 'docker build -t adwaa/dojo-jump:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ AWS_EB_APP_NAME = 'dojotest-dojojump'
 		stage('Push') {
 
 			steps {
-				sh 'docker push chandradeoarya/dojo-jump:latest'
+				sh 'docker push adwaa/dojo-jump:latest'
 			}
 		}
 
