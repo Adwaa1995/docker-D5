@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t adwaa/dojo-jump1:latest .'
+				sh 'docker build -t adwaa/dojo-jump:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push adwaa/dojo-jump1:latest'
+				sh 'docker push adwaa/dojo-jump:latest'
 			}
 		}
 	}
